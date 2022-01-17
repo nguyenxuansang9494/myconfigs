@@ -1,0 +1,6 @@
+Here are packages that I used:
+feh
+brightnessctl
+scrot
+picom
+xorg

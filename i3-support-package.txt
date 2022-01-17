@@ -1,7 +1,0 @@
-feh
-brightnessctl
-i3
-i3-wm
-i3status
-scrot
-font-awesome
