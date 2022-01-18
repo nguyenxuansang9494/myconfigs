@@ -33,7 +33,6 @@ font:
     x: 0
     y: 5
 
-
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
@@ -107,4 +106,4 @@ window:
   startup_mode: Maximized
 
 import:
-  - /home/sangnguyen/.config/alacritty/colorschemes/dracula.yml
+  - ~/.config/alacritty/colorschemes/dracula.yml

@@ -255,4 +255,4 @@ gaps inner 5
 exec --no-startup-id picom -b --experimental-backends
 
 #Auto start nitrogen
-exec --no-startup-id feh --bg-center /home/sangnguyen/.wallpaper/mitsuha.png
+exec --no-startup-id feh --bg-center ~/.wallpaper/mitsuha.png
