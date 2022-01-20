@@ -210,7 +210,6 @@ bar {
 
 bindsym $mod+shift+x exec i3lock && systemctl suspend
 
-bindsym $mod+shift+b exec xrandr --output eDP --brightness 0.9
 bindsym $mod+c exec code
 bindsym $mod+g exec google-chrome-stable
 bindsym $mod+shift+u exec systemctl poweroff
@@ -234,7 +233,7 @@ assign [class="dota2"] $ws5
 assign [class="steam_app_938380"] $ws5
 for_window [class="Spotify"] move to workspace $ws6
 for_window [class="Skype"] move to workspace $ws7
-for_window [class="^(?!(?:Alacritty|Code|Google-chrome|Steam|deadcells|dota2|Spotify|Skype|steam_app_938380)).*$"] move to workspace $ws8
+for_window [class="^(?!(?:Alacritty|Code|Google-chrome|Steam|deadcells|dota2|Spotify|Skype|steam_app_938380|Xdg-desktop-portal-gtk)).*$"] move to workspace $ws8
 
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
