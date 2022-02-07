@@ -126,7 +126,7 @@ set $ws3 "3: Terminal  "
 set $ws4 "4: Steam  "
 set $ws5 "5: Games  "
 set $ws6 "6: Spotify  "
-set $ws7 "7: Skype  "
+set $ws7 "7: Edge  "
 set $ws8 "8: Others  "
 set $ws9 "9"
 set $ws10 "10"
@@ -231,9 +231,10 @@ assign [class="Steam"] $ws4
 assign [class="deadcells"] $ws5
 assign [class="dota2"] $ws5
 assign [class="steam_app_938380"] $ws5
+assign [class="worldbox"] $ws5
 for_window [class="Spotify"] move to workspace $ws6
-for_window [class="Skype"] move to workspace $ws7
-for_window [class="^(?!(?:Alacritty|Code|Google-chrome|Steam|deadcells|dota2|Spotify|Skype|steam_app_938380|Xdg-desktop-portal-gtk)).*$"] move to workspace $ws8
+for_window [class="Microsoft-edge"] move to workspace $ws7
+for_window [class="^(?!(?:Alacritty|Code|Google-chrome|Steam|deadcells|dota2|Spotify|Microsoft-edge|steam_app_938380|Xdg-desktop-portal-gtk|worldbox)).*$"] move to workspace $ws8
 
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"

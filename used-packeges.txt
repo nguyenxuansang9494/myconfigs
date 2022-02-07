@@ -4,3 +4,4 @@ brightnessctl
 scrot
 picom
 xorg
+rofi

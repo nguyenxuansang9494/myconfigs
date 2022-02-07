@@ -13,10 +13,11 @@
         {
           "type": "session",
           "style": "plain",
-          "foreground": "#ffb86c",
+          "foreground": "#f1fa8c",
           "properties": {
             "postfix": " <#f8f8f2>at</> ",
-            "template": "{{ .UserName }}"
+            "template": "{{ .UserName }}",
+            "prefix": ""
           }
         },
         {
@@ -25,8 +26,7 @@
           "foreground": "#8be9fd",
           "properties": {
             "prefix": "",
-            "postfix": " ",
-            "macos": "mac"
+            "postfix": " "
           }
         },
         {
@@ -35,7 +35,7 @@
           "foreground": "#8be9fd",
           "properties": {
             "prefix": "",
-            "template": "{{ .ComputerName }}",
+            "template": "{{ .HostName }}",
             "postfix": ""
           }
         },
@@ -100,7 +100,7 @@
         {
           "type": "ruby",
           "style": "powerline",
-          "foreground": "#f44336",
+          "foreground": "#ff5555",
           "properties": {
             "prefix": "\u005b\uE791",
             "postfix": "\u005D "
@@ -126,7 +126,7 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#f1fa8c",
+          "foreground": "#f8f8f2",
           "properties": {
             "prefix": "",
             "text": "\u276F"
