@@ -93,10 +93,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Ctrl+h split h
+bindsym $mod+shift+b split h
 
 # split in vertical orientation
-bindsym $mod+Ctrlv split v
+bindsym $mod+shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -126,7 +126,7 @@ set $ws3 "3: Terminal  "
 set $ws4 "4: Steam  "
 set $ws5 "5: Games  "
 set $ws6 "6: Spotify  "
-set $ws7 "7: Edge  "
+set $ws7 "7: Files  "
 set $ws8 "8: Others  "
 set $ws9 "9"
 set $ws10 "10"
@@ -208,12 +208,15 @@ bar {
 
 }
 
-bindsym $mod+shift+x exec i3lock && systemctl suspend
+bindsym $mod+shift+x exec i3lock -i ~/.wallpaper/mitsuha.png && systemctl suspend
 
+# Fast open apps
 bindsym $mod+c exec code
 bindsym $mod+g exec google-chrome-stable
+bindsym $mod+n exec nautilus
 bindsym $mod+shift+u exec systemctl poweroff
 bindsym $mod+shift+i exec systemctl reboot
+bindsym $mod+shift+o exec "i3lock -i ~/.wallpaper/mitsuha.png; sudo systemctl hibernate"
 
 exec_always --no-startup-id ibus-daemon --xim -d -r
 
@@ -232,27 +235,43 @@ assign [class="deadcells"] $ws5
 assign [class="dota2"] $ws5
 assign [class="steam_app_938380"] $ws5
 assign [class="worldbox"] $ws5
+assign [class="Citra"] $ws5
+assign [class="dontstarve_steam_x64"] $ws5
+for_window [class="steam_app_219990"] move to workspace $ws5
 for_window [class="Spotify"] move to workspace $ws6
-for_window [class="Microsoft-edge"] move to workspace $ws7
-for_window [class="^(?!(?:Alacritty|Code|Google-chrome|Steam|deadcells|dota2|Spotify|Microsoft-edge|steam_app_938380|Xdg-desktop-portal-gtk|worldbox)).*$"] move to workspace $ws8
+for_window [class="Org.gnome.Nautilus"] move to workspace $ws7
+for_window [class="^(?!(?:Alacritty|Code|Google-chrome|Steam|deadcells|dota2|Spotify|Org.gnome.Nautilus|steam_app_938380|Xdg-desktop-portal-gtk|worldbox|Citra|dontstarve_steam_x64|steam_app_219990|Polkit-gnome-authentication-agent-1)).*$"] move to workspace $ws8
 
 
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+bindsym $mod+d exec rofi -show drun -show-icons
+bindsym $mod+shift+d exec rofi -show run
+bindsym $mod+Tab exec rofi -show window -show-icons
+bindsym $mod+Shift+Tab exec rofi -show windowcd -show-icons
 
 bindsym $mod+period exec brightnessctl set 5%+
 bindsym $mod+comma exec brightnessctl set 5%-
 
 
 #Disable title bar
-for_window [class="^.*"] border pixel 1 
+for_window [class="^.*"] border pixel 0 
 new_window 1pixel
 
 #Gaps
 gaps outer 5
 gaps inner 5
+smart_gaps on
 
 #Auto start picom
 exec --no-startup-id picom -b --experimental-backends
 
 #Auto start nitrogen
-exec --no-startup-id feh --bg-center ~/.wallpaper/mitsuha.png
+exec --no-startup-id feh --bg-center ~/.wallpaper/powder2.jpg
+exec --no-startup-id xfce4-power-manager
+
+#Authentication agent
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+bindsym $mod+ctrl+Left workspace prev
+bindsym $mod+ctrl+Right workspace next
+bindsym $mod+ctrl+h workspace prev
+bindsym $mod+ctrl+l workspace next
